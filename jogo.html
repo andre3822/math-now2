@@ -360,14 +360,85 @@
 
   function mostrarFim() {
     questionContainer.innerHTML = `
-      <div class="question">ACABOU</div>
+      <div class="question">MATH NOW</div>
       <div class="feedback correct" style="font-size: 2rem;">Você adquiriu ${pontos} pontos!</div>
+      <input id="nomeUsuario" type="text" placeholder="Digite seu primeiro nome" style="padding: 10px; font-size: 1rem; border-radius: 8px; margin-top: 15px;" />
+      <button onclick="enviarPontuacao()" style="padding: 10px 20px; font-size: 1rem; border: none; background: #9333ea; color: white; border-radius: 8px; cursor: pointer; margin-top: 10px;">Confirmar</button>
+      <div id="erroNome" style="color: #ff2c00; margin-top: 10px;"></div>
     `;
     questionContainer.style.display = "flex";
     timerDisplay.style.display = "none";
   }
 
   carregarPerguntas();
+
+  async function enviarPontuacao() {
+  const nomeInput = document.getElementById("nomeUsuario");
+  const erroDiv = document.getElementById("erroNome");
+  const nome = nomeInput.value.trim();
+
+  if (!nome || nome.includes(" ")) {
+    erroDiv.textContent = "Digite apenas o primeiro nome (sem espaços).";
+    return;
+  }
+
+  const response = await fetch("http://localhost:3000/enviar-pontuacao", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ nome, pontos })
+  });
+
+  const data = await response.json();
+
+  if (data.sucesso) {
+    mostrarRanking();
+  } else {
+    erroDiv.textContent = data.erro || "Erro ao enviar pontuação.";
+  }
+}
+
+async function enviarPontuacao() {
+  const nomeInput = document.getElementById("nomeUsuario");
+  const erroDiv = document.getElementById("erroNome");
+  const nome = nomeInput.value.trim();
+
+  if (!nome || nome.includes(" ")) {
+    erroDiv.textContent = "Digite apenas o primeiro nome (sem espaços).";
+    return;
+  }
+
+  const response = await fetch("http://localhost:3000/enviar-pontuacao", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ nome, pontos })
+  });
+
+  const data = await response.json();
+
+  if (data.sucesso) {
+    mostrarRanking();
+  } else {
+    erroDiv.textContent = data.erro || "Erro ao enviar pontuação.";
+  }
+}
+
+async function mostrarRanking() {
+  const response = await fetch("http://localhost:3000/ranking");
+  const ranking = await response.json();
+
+  questionContainer.innerHTML = `
+    <div class="question">🏆 RANKING TOP 20</div>
+    <div id="ranking-list" style="max-height: 400px; overflow-y: auto; width: 100%; text-align: left; padding: 10px;">
+      ${ranking.map((item, i) => `
+        <div style="margin-bottom: 8px; font-size: 1.2rem;">
+          ${i + 1}º - <strong>${item.nome}</strong>: ${item.pontos} pontos
+        </div>
+      `).join("")}
+    </div>
+  `;
+  questionContainer.style.display = "flex";
+}
+
 </script>
 
 </body>
