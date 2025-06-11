@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Now - Bora lá!</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      background: url("img/background.avif") center/cover no-repeat;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .prepare {
+      font-size: 4rem;
+      color: rgb(240, 240, 240);
+      font-weight: bold;
+      animation: fadeInOut 4s forwards;
+    }
+
+    .countdown-img {
+      width: 200px;
+      animation: popIn 1s forwards;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: scale(0.8); }
+      10% { opacity: 1; transform: scale(1); }
+      90% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.2); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    #question-container {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .timer {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      transition: color 0.5s ease;
+      z-index: 10;
+      display: none;
+    }
+
+    .question {
+      font-size: 2.5rem;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+    }
+
+    .respostas {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-resposta {
+      padding: 15px 30px;
+      background-color: #9333ea;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: white;
+      transition: background 0.3s ease;
+    }
+
+    .btn-resposta:hover {
+      background-color: #7e22ce;
+    }
+
+    .feedback {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .correct {
+      color: #5cd388;
+    }
+
+    .incorrect {
+      color: #a31a1a;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.219);
+      z-index: 0;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="overlay"></div>
+<div class="timer" id="timer">Tempo: 20s</div>
+
+<div id="container">
+  <div id="prepare-text" class="prepare">PREPARE-SE</div>
+  <img id="countdown" class="countdown-img" src="" alt="" style="display: none;" />
+
+  <div id="question-container">
+    <div class="question" id="pergunta">Ocorreu um erro ao carregar a pergunta.</div>
+  </div>
+</div>
+
+<script>
+  const prepareText = document.getElementById("prepare-text");
+  const countdownImg = document.getElementById("countdown");
+  const questionContainer = document.getElementById("question-container");
+  const perguntaDiv = document.getElementById("pergunta");
+  const timerDisplay = document.getElementById("timer");
+
+  let perguntas = [];
+  let perguntaAtual = 0;
+  let pontos = 0;
+  let acertosSeguidos = 0;
+  let respondeu = false;
+  let timer = 20;
+  let timerInterval;
+
+  function updateTimerColor() {
+    if (timer > 15) {
+      timerDisplay.style.color = "#ffffff";
+    } else if (timer > 10) {
+      timerDisplay.style.color = "#E15400";
+    } else if (timer > 5) {
+      timerDisplay.style.color = "#FF2C00";
+    } else {
+      timerDisplay.style.color = "#FF011B";
+    }
+  }
+
+  function startTimer() {
+    timer = perguntas[perguntaAtual].tempo || 20;
+    timerDisplay.textContent = `Tempo: ${timer}s`;
+    updateTimerColor();
+    timerInterval = setInterval(() => {
+      timer--;
+      timerDisplay.textContent = `Tempo: ${timer}s`;
+      updateTimerColor();
+      if (timer <= 0) {
+        clearInterval(timerInterval);
+        if (!respondeu) processResposta(null);
+      }
+    }, 1000);
+  }
+
+  function embaralhar(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  function disableRespostas() {
+    document.querySelectorAll(".btn-resposta").forEach(btn => btn.disabled = true);
+  }
+
+  async function carregarPerguntas() {
+    const response = await fetch("perguntas.json");
+    const dados = await response.json();
+    perguntas = embaralhar(dados).slice(0, 15);
+    iniciarQuiz();
+  }
+
+  function iniciarQuiz() {
+    perguntaAtual = 0;
+    pontos = 0;
+    acertosSeguidos = 0;
+    mostrarContagemInicial();
+  }
+
+  function mostrarContagemInicial() {
+    questionContainer.style.display = "none";
+    timerDisplay.style.display = "none";
+    countdownImg.style.display = "block";
+    const imagens = ["img/Icones/3.png", "img/Icones/2.png", "img/Icones/1.png"];
+    let index = 0;
+
+    const somContagem = document.getElementById("som-contagem");
+
+    function animarContagem() {
+      if (index < imagens.length) {
+        countdownImg.src = imagens[index];
+        countdownImg.classList.remove("countdown-img");
+        void countdownImg.offsetWidth;
+        countdownImg.classList.add("countdown-img");
+
+        if (somContagem) {
+          somContagem.currentTime = 0;
+          somContagem.play();
+        }
+
+        index++;
+        setTimeout(animarContagem, 1000);
+      } else {
+        countdownImg.style.display = "none";
+        mostrarPergunta();
+      }
+    }
+
+    animarContagem();
+  }
+
+  function mostrarPergunta() {
+    respondeu = false;
+    questionContainer.innerHTML = `<div class="question" id="pergunta">${perguntas[perguntaAtual].pergunta}</div><div class="respostas"></div>`;
+    questionContainer.style.display = "flex";
+    timerDisplay.style.display = "block";
+
+    const respostasDiv = questionContainer.querySelector(".respostas");
+
+    perguntas[perguntaAtual].opcoes.forEach(opcao => {
+      const btn = document.createElement("button");
+      btn.className = "btn-resposta";
+      btn.textContent = opcao;
+      btn.addEventListener("click", () => {
+        if (!respondeu) processResposta(opcao);
+      });
+      respostasDiv.appendChild(btn);
+    });
+
+    startTimer();
+  }
+
+  function processResposta(opcaoSelecionada) {
+    respondeu = true;
+    clearInterval(timerInterval);
+    const correta = perguntas[perguntaAtual].resposta_certa;
+    const respostaTexto = perguntas[perguntaAtual].opcoes.find(o => o.includes(correta));
+
+    let correto = opcaoSelecionada && opcaoSelecionada.includes(correta);
+    let feedbackTexto = correto ? "Correto!" : "Errado!";
+    let classe = correto ? "correct" : "incorrect";
+
+    if (correto) {
+      acertosSeguidos++;
+      let pontosBase = timer * 10;
+      let bonus = (acertosSeguidos >= 3) ? 50 : 0;
+      pontos += pontosBase + bonus;
+      feedbackTexto += ` +${pontosBase} pontos`;
+      if (bonus > 0) feedbackTexto += ` +${bonus} bônus por sequência!`;
+    } else {
+      acertosSeguidos = 0;
+    }
+
+    mostrarFeedback(feedbackTexto, classe);
+  }
+
+  function mostrarFeedback(texto, classe) {
+    questionContainer.style.display = "none";
+    timerDisplay.style.display = "none";
+
+    const telaFeedback = document.createElement("div");
+    telaFeedback.id = "tela-feedback";
+    telaFeedback.style.cssText = `
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white;
+      z-index: 20;
+      animation: fade 0.6s ease;
+    `;
+
+    const feedback = document.createElement("div");
+    feedback.textContent = texto;
+    feedback.style.animation = "pop 1s ease";
+    feedback.className = classe;
+
+    const pontuacao = document.createElement("div");
+    pontuacao.textContent = `Pontuação: ${pontos}`;
+    pontuacao.style.fontSize = "1.5rem";
+    pontuacao.style.marginTop = "10px";
+    pontuacao.style.color = "#ccc";
+
+    const progresso = document.createElement("div");
+    progresso.textContent = `Pergunta ${perguntaAtual + 1}/${perguntas.length}`;
+    progresso.style.fontSize = "1.2rem";
+    progresso.style.marginTop = "5px";
+    progresso.style.color = "#aaa";
+
+    telaFeedback.appendChild(feedback);
+    telaFeedback.appendChild(pontuacao);
+    telaFeedback.appendChild(progresso);
+    document.body.appendChild(telaFeedback);
+
+    setTimeout(() => {
+      document.body.removeChild(telaFeedback);
+      perguntaAtual++;
+      if (perguntaAtual < perguntas.length) {
+        mostrarContagemInicial();
+      } else {
+        mostrarFim();
+      }
+    }, 2500);
+  }
+
+  function mostrarFim() {
+    questionContainer.innerHTML = `
+      <div class="question">ACABOU</div>
+      <div class="feedback correct" style="font-size: 2rem;">Você adquiriu ${pontos} pontos!</div>
+    `;
+    questionContainer.style.display = "flex";
+    timerDisplay.style.display = "none";
+  }
+
+  carregarPerguntas();
+</script>
+
+</body>
+</html>

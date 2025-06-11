@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Now - Início</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="carregando-screen">
+    <img src="img/logo.png" alt="Logo da Empresa" class="logo animar-logo" />
+    <div class="bagulho-que-roda"></div>
+  </div>
+
+  <div id="transicao-jogo" class="hidden">
+  <div class="background-overlay">
+    <img src="img/logo.png" alt="Logo Math Now" class="logo logo-transicao" />
+  </div>
+</div>
+
+  <div id="main-menu" class="hidden">
+    <div class="background-overlay">
+      <h1 class="title">Math Now</h1>
+      <div class="buttons">
+        <button onclick="jogar()">Jogar</button>
+        <button onclick="conq()">Conquistas</button>
+        <button onclick="rank()">Ranking</button>
+      </div>
+    </div>
+
+    <header class="sponsors">
+      <a href="https://www.saopaulo.sp.gov.br/" target="_blank" rel="noopener" class="sponsor-link">
+        <img src="img/estadosp.png" alt="Governo do Estado de São Paulo" />
+      </a>
+      <p class="sponsor-description">Este projeto foi criado como parte das atividades educacionais da Escola Estadual José Firpo</p>
+    </header>
+  </div>
+
+  <script>
+  window.addEventListener('load', () => {
+    const logo = document.querySelector('.logo');
+    const spinner = document.querySelector('.bagulho-que-roda');
+    const carregando = document.getElementById('carregando-screen');
+    const menu = document.getElementById('main-menu');
+
+    setTimeout(() => {
+      spinner.classList.add('ocultar');
+
+      logo.classList.add('expandir');
+
+      setTimeout(() => {
+        menu.classList.remove('hidden');
+
+        logo.classList.remove('expandir');
+        logo.classList.add('recolher');
+
+        setTimeout(() => {
+          carregando.style.display = 'none';
+        }, 1000);
+
+      }, 1500);
+
+    }, 1000);
+  });
+
+  function jogar() {
+  const mainMenu = document.getElementById('main-menu');
+  const transicao = document.getElementById('transicao-jogo');
+
+  mainMenu.style.display = 'none';
+
+  transicao.classList.remove('hidden');
+
+  setTimeout(() => {
+    window.location.href = 'jogo.html';
+  }, 3000);
+}
+
+  function conq() {
+    alert("Desenvolvimento");
+  }
+
+  function rank() {
+    alert("Desenvolvimento");
+  }
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
