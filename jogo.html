@@ -372,31 +372,6 @@
 
   carregarPerguntas();
 
-  async function enviarPontuacao() {
-  const nomeInput = document.getElementById("nomeUsuario");
-  const erroDiv = document.getElementById("erroNome");
-  const nome = nomeInput.value.trim();
-
-  if (!nome || nome.includes(" ")) {
-    erroDiv.textContent = "Digite apenas o primeiro nome (sem espaços).";
-    return;
-  }
-
-  const response = await fetch("http://localhost:3000/enviar-pontuacao", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ nome, pontos })
-  });
-
-  const data = await response.json();
-
-  if (data.sucesso) {
-    mostrarRanking();
-  } else {
-    erroDiv.textContent = data.erro || "Erro ao enviar pontuação.";
-  }
-}
-
 async function enviarPontuacao() {
   const nomeInput = document.getElementById("nomeUsuario");
   const erroDiv = document.getElementById("erroNome");
@@ -407,7 +382,7 @@ async function enviarPontuacao() {
     return;
   }
 
-  const response = await fetch("http://localhost:3000/enviar-pontuacao", {
+  const response = await fetch("https://math-now2.onrender.com/enviar-pontuacao", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ nome, pontos })
@@ -423,7 +398,7 @@ async function enviarPontuacao() {
 }
 
 async function mostrarRanking() {
-  const response = await fetch("http://localhost:3000/ranking");
+  const response = await fetch("https://math-now2.onrender.com/ranking");
   const ranking = await response.json();
 
   questionContainer.innerHTML = `
