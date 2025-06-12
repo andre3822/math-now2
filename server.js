@@ -17,7 +17,7 @@ app.post('/enviar-pontuacao', async (req, res) => {
   try {
     const existe = await pool.query('SELECT * FROM ranking WHERE nome = $1', [nome]);
     if (existe.rows.length > 0) {
-      return res.status(400).json({ erro: "Nome já cadastrado. Use /forcar-pontuacao se for admin." });
+      return res.status(400).json({ erro: "Nome já existe" });
     }
 
     await pool.query('INSERT INTO ranking (nome, pontos) VALUES ($1, $2)', [nome, pontos]);
