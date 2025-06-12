@@ -15,11 +15,39 @@ app.post('/enviar-pontuacao', async (req, res) => {
   if (!nome || nome.includes(" ")) return res.status(400).json({ erro: "Nome inválido" });
 
   try {
+    const existe = await pool.query('SELECT * FROM ranking WHERE nome = $1', [nome]);
+    if (existe.rows.length > 0) {
+      return res.status(400).json({ erro: "Nome já cadastrado. Use /forcar-pontuacao se for admin." });
+    }
+
     await pool.query('INSERT INTO ranking (nome, pontos) VALUES ($1, $2)', [nome, pontos]);
     res.status(200).json({ sucesso: true });
   } catch (err) {
     console.error(err);
     res.status(500).json({ erro: "Erro ao salvar" });
+  }
+});
+
+app.post('/forcar-pontuacao', async (req, res) => {
+  const { nome, pontos, senha } = req.body;
+
+  if (senha !== "38224628a") {
+    return res.status(403).json({ sucesso: false, erro: "Senha inválida" });
+  }
+
+  try {
+    const existe = await pool.query('SELECT * FROM ranking WHERE nome = $1', [nome]);
+
+    if (existe.rows.length > 0) {
+      await pool.query('UPDATE ranking SET pontos = $1 WHERE nome = $2', [pontos, nome]);
+    } else {
+      await pool.query('INSERT INTO ranking (nome, pontos) VALUES ($1, $2)', [nome, pontos]);
+    }
+
+    res.status(200).json({ sucesso: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erro: "Erro ao forçar pontuação" });
   }
 });
 
@@ -33,4 +61,4 @@ app.get('/ranking', async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log('Servidor rodando na porta 5432'));
+app.listen(3000, () => console.log('Servidor rodando na porta 3000'));

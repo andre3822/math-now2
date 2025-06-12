@@ -392,6 +392,27 @@ async function enviarPontuacao() {
 
   if (data.sucesso) {
     mostrarRanking();
+  } else if (data.erro === "Nome já existe") {
+    const senha = prompt("Esse nome já existe. Para substituir a pontuação, digite a senha de admin:");
+
+    if (senha === "Firpo@2025") {
+      const forcar = await fetch("https://math-now2.onrender.com/forcar-pontuacao", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nome, pontos, senha })
+      });
+
+      const resultado = await forcar.json();
+
+      if (resultado.sucesso) {
+        mostrarRanking();
+      } else {
+        erroDiv.textContent = resultado.erro || "Erro ao substituir pontuação.";
+      }
+    } else {
+      alert("Ops! Algo deu errado.")
+      erroDiv.textContent = "Senha incorreta :(";
+    }
   } else {
     erroDiv.textContent = data.erro || "Erro ao enviar pontuação.";
   }
@@ -402,7 +423,7 @@ async function mostrarRanking() {
   const ranking = await response.json();
 
   questionContainer.innerHTML = `
-    <div class="question">🏆 RANKING TOP 20</div>
+    <div class="question">TOP 20 CLASSIFICAÇÕES</div>
     <div id="ranking-list" style="max-height: 400px; overflow-y: auto; width: 100%; text-align: left; padding: 10px;">
       ${ranking.map((item, i) => `
         <div style="margin-bottom: 8px; font-size: 1.2rem;">
