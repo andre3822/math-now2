@@ -390,9 +390,11 @@ async function enviarPontuacao() {
 
   const data = await response.json();
 
+  console.log(data);
+
   if (data.sucesso) {
     mostrarRanking();
-  } else if (data.erro === "Nome já existe") {
+  } else if ((data.erro && data.erro.includes("existe")) || (data.mensagem && data.mensagem.includes("existe"))) {
     const senha = prompt("Esse nome já existe. Para substituir a pontuação, digite a senha de admin:");
 
     if (senha === "Firpo@2025") {
@@ -410,11 +412,11 @@ async function enviarPontuacao() {
         erroDiv.textContent = resultado.erro || "Erro ao substituir pontuação.";
       }
     } else {
-      alert("Ops! Algo deu errado.")
+      alert("Ops! Algo deu errado.");
       erroDiv.textContent = "Senha incorreta :(";
     }
   } else {
-    erroDiv.textContent = data.erro || "Erro ao enviar pontuação.";
+    erroDiv.textContent = data.erro || data.mensagem || "Erro ao enviar pontuação.";
   }
 }
 
