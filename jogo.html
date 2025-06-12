@@ -216,7 +216,7 @@
   async function carregarPerguntas() {
     const response = await fetch("perguntas.json");
     const dados = await response.json();
-    perguntas = embaralhar(dados).slice(0, 10);
+    perguntas = embaralhar(dados).slice(0, 1);
     iniciarQuiz();
   }
 
@@ -364,7 +364,8 @@
       <div class="question">MATH NOW</div>
       <div class="feedback correct" style="font-size: 2rem;">Você adquiriu ${pontos} pontos!</div>
       <input id="nomeUsuario" type="text" placeholder="Digite seu primeiro nome" style="padding: 10px; font-size: 1rem; border-radius: 8px; margin-top: 15px;" />
-      <button onclick="enviarPontuacao()" style="padding: 10px 20px; font-size: 1rem; border: none; background: #9333ea; color: white; border-radius: 8px; cursor: pointer; margin-top: 10px;">Confirmar</button>
+      <button id="botaoConfirmar" onclick="enviarPontuacao()" style="padding: 10px 20px; font-size: 1rem; border: none; background: #9333ea; color: white; border-radius: 8px; cursor: pointer; margin-top: 10px;">Confirmar</button>
+      <div id="statusEnvio" style="margin-top: 10px; font-size: 1rem; color: #ccc;"></div>
       <div id="erroNome" style="color: #ff2c00; margin-top: 10px;"></div>
     `;
     questionContainer.style.display = "flex";
@@ -376,12 +377,20 @@
 async function enviarPontuacao() {
   const nomeInput = document.getElementById("nomeUsuario");
   const erroDiv = document.getElementById("erroNome");
+  const statusDiv = document.getElementById("statusEnvio");
+  const botao = document.getElementById("botaoConfirmar");
   const nome = nomeInput.value.trim();
+
+  erroDiv.textContent = "";
+  statusDiv.textContent = "";
 
   if (!nome || nome.includes(" ")) {
     erroDiv.textContent = "Digite apenas o primeiro nome (sem espaços).";
     return;
   }
+
+  botao.style.display = "none";
+  statusDiv.textContent = "Enviando dados...";
 
   const response = await fetch("https://math-now2.onrender.com/enviar-pontuacao", {
     method: "POST",
@@ -390,8 +399,6 @@ async function enviarPontuacao() {
   });
 
   const data = await response.json();
-
-  console.log(data);
 
   if (data.sucesso) {
     mostrarRanking();
@@ -411,13 +418,18 @@ async function enviarPontuacao() {
         mostrarRanking();
       } else {
         erroDiv.textContent = resultado.erro || "Erro ao substituir pontuação.";
+        botao.style.display = "block";
+        statusDiv.textContent = "";
       }
     } else {
-      alert("Ops! Algo deu errado.");
       erroDiv.textContent = "Senha incorreta :(";
+      botao.style.display = "block";
+      statusDiv.textContent = "";
     }
   } else {
     erroDiv.textContent = data.erro || data.mensagem || "Erro ao enviar pontuação.";
+    botao.style.display = "block";
+    statusDiv.textContent = "";
   }
 }
 

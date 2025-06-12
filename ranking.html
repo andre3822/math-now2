@@ -85,7 +85,7 @@
         lista.innerHTML = '';
 
         if (dados.length === 0) {
-          lista.innerHTML = '<p>Nenhum dado foi encontrado no banco de dados.</p>';
+          lista.innerHTML = '<p>Banco de dados vazio.</p>';
           return;
         }
 
@@ -101,7 +101,7 @@
 
       } catch (erro) {
         console.error(erro);
-        document.getElementById('ranking-list').innerHTML = '<p>Erro ao carregar o ranking.</p>';
+        document.getElementById('ranking-list').innerHTML = '<p>Erro ao carregar classificações.</p>';
       }
     }
 
