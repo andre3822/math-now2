@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Math Now - Classificações</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: url("img/background.avif") no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .ranking-container {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+    }
+
+    .ranking-title {
+      font-size: 2em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .ranking-list {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+    }
+
+    .ranking-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 1.2em;
+    }
+
+    .ranking-item:last-child {
+      border-bottom: none;
+    }
+
+    .voltar-btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #6800ad;
+      color: white;
+      cursor: pointer;
+    }
+
+    .voltar-btn:hover {
+      background-color: #5509ac;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ranking-container">
+    <h1 class="ranking-title">TOP 20 CLASSIFICAÇÕES</h1>
+    <div class="ranking-list" id="ranking-list">
+      <p>Carregando ranking...</p>
+    </div>
+    <button class="voltar-btn" onclick="voltar()">Voltar ao menu</button>
+  </div>
+
+  <script>
+    async function carregarRanking() {
+      try {
+        const res = await fetch('https://math-now2.onrender.com/ranking');
+        const dados = await res.json();
+
+        const lista = document.getElementById('ranking-list');
+        lista.innerHTML = '';
+
+        if (dados.length === 0) {
+          lista.innerHTML = '<p>Nenhum dado foi encontrado no banco de dados.</p>';
+          return;
+        }
+
+        dados.forEach((jogador, i) => {
+          const item = document.createElement('div');
+          item.className = 'ranking-item';
+          item.innerHTML = `
+            <span>#${i + 1} - ${jogador.nome}</span>
+            <span>${jogador.pontos} pts</span>
+          `;
+          lista.appendChild(item);
+        });
+
+      } catch (erro) {
+        console.error(erro);
+        document.getElementById('ranking-list').innerHTML = '<p>Erro ao carregar o ranking.</p>';
+      }
+    }
+
+    function voltar() {
+      window.location.href = 'index.html';
+    }
+
+    carregarRanking();
+  </script>
+</body>
+</html>

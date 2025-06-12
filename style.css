@@ -108,7 +108,7 @@ body, html {
 .title { /* Isso aqui é o título inicial do menu */
   font-size: 3.5rem;
   margin-bottom: 40px;
-  background: linear-gradient(135deg, #FF5FC0, #4b4bd6);
+  background: linear-gradient(135deg, #d71489, #161692);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
