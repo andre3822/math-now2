@@ -433,8 +433,15 @@ async function mostrarRanking() {
         </div>
       `).join("")}
     </div>
+    <button onclick="voltarHome()" style="margin-top: 20px; padding: 10px 20px; font-size: 1rem; background-color: #9333ea; color: white; border: none; border-radius: 8px; cursor: pointer;">
+      Voltar para Início
+    </button>
   `;
   questionContainer.style.display = "flex";
+}
+
+function voltarHome() {
+  window.location.href = "index.html";
 }
 
 </script>
