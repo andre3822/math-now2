@@ -6,7 +6,7 @@
         "tempo": 10
     },
     {
-        "pergunta": "Quanto é 3 elevado ao quadrado?",
+        "pergunta": "Quanto é 3 ao quadrado?",
         "opcoes": ["A) 6", "B) 9", "C) 12", "D) 27"],
         "resposta_certa": "B) 9",
         "tempo": 10
@@ -30,7 +30,7 @@
         "tempo": 20
     },
     {
-        "pergunta": "Quanto é 2⁵ (2 elevado a 5)?",
+        "pergunta": "Quanto é 2⁵?",
         "opcoes": ["A) 32", "B) 16", "C) 64", "D) 48"],
         "resposta_certa": "A) 32",
         "tempo": 20
@@ -120,7 +120,7 @@
         "tempo": 10
     },
     {
-        "pergunta": "Quanto é 5³ (5 elevado à 3)?",
+        "pergunta": "Quanto é 5³?",
         "opcoes": ["A) 125", "B) 100", "C) 150", "D) 225"],
         "resposta_certa": "A) 125",
         "tempo": 15
@@ -192,7 +192,7 @@
         "tempo": 15
     },
     {
-        "pergunta": "Quanto é 8 elevado ao quadrado?",
+        "pergunta": "Quanto é 8 ao quadrado?",
         "opcoes": ["A) 64", "B) 32", "C) 48", "D) 16"],
         "resposta_certa": "A) 64",
         "tempo": 12
@@ -228,7 +228,7 @@
         "tempo": 15
     },
     {
-        "pergunta": "Quanto é 9 elevado ao quadrado?",
+        "pergunta": "Quanto é 9 ao quadrado?",
         "opcoes": ["A) 81", "B) 72", "C) 91", "D) 99"],
         "resposta_certa": "A) 81",
         "tempo": 12
@@ -252,7 +252,7 @@
         "tempo": 12
     },
     {
-        "pergunta": "Quanto é 4³ (4 elevado a 3)?",
+        "pergunta": "Quanto é 4³?",
         "opcoes": ["A) 64", "B) 60", "C) 50", "D) 48"],
         "resposta_certa": "A) 64",
         "tempo": 15
@@ -322,5 +322,203 @@
         "opcoes": ["A) 180", "B) 190", "C) 200", "D) 210"],
         "resposta_certa": "C) 200",
         "tempo": 20
+    },
+    {
+        "pergunta": "Quanto é 6 × 7?",
+        "opcoes": ["A) 42", "B) 44", "C) 46", "D) 48"],
+        "resposta_certa": "A) 42",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Qual é a raiz quadrada de 36?",
+        "opcoes": ["A) 5", "B) 6", "C) 7", "D) 8"],
+        "resposta_certa": "B) 6",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Se 10% de um número é 10, qual é o número?",
+        "opcoes": ["A) 50", "B) 80", "C) 100", "D) 120"],
+        "resposta_certa": "C) 100",
+        "tempo": 15
+    },
+    {
+        "pergunta": "Quanto é 11 × 11?",
+        "opcoes": ["A) 111", "B) 121", "C) 131", "D) 141"],
+        "resposta_certa": "B) 121",
+        "tempo": 12
+    },
+    {
+        "pergunta": "Qual é a metade de 90?",
+        "opcoes": ["A) 40", "B) 45", "C) 50", "D) 60"],
+        "resposta_certa": "B) 45",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Quanto é 6³?",
+        "opcoes": ["A) 216", "B) 136", "C) 126", "D) 196"],
+        "resposta_certa": "A) 216",
+        "tempo": 15
+    },
+    {
+        "pergunta": "Qual é a raiz cúbica de 8?",
+        "opcoes": ["A) 2", "B) 4", "C) 6", "D) 8"],
+        "resposta_certa": "A) 2",
+        "tempo": 12
+    },
+    {
+        "pergunta": "Quanto é 100 × 2?",
+        "opcoes": ["A) 100", "B) 150", "C) 200", "D) 250"],
+        "resposta_certa": "C) 200",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Se f(x) = 3x - 2, quanto é f(4)?",
+        "opcoes": ["A) 10", "B) 11", "C) 12", "D) 14"],
+        "resposta_certa": "B) 10",
+        "tempo": 15
+    },
+    {
+        "pergunta": "Quanto é 30% de 300?",
+        "opcoes": ["A) 60", "B) 70", "C) 80", "D) 90"],
+        "resposta_certa": "D) 90",
+        "tempo": 15
+    },
+    {
+        "pergunta": "Quanto é 50 dividido por 5?",
+        "opcoes": ["A) 5", "B) 8", "C) 10", "D) 15"],
+        "resposta_certa": "C) 10",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Qual o valor de 2 + 2 × 3?",
+        "opcoes": ["A) 10", "B) 8", "C) 12", "D) 6"],
+        "resposta_certa": "B) 8",
+        "tempo": 12
+    },
+    {
+        "pergunta": "Quanto é 1/2 de 80?",
+        "opcoes": ["A) 30", "B) 35", "C) 40", "D) 45"],
+        "resposta_certa": "C) 40",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Qual é a área de um quadrado com lado 12?",
+        "opcoes": ["A) 144", "B) 122", "C) 128", "D) 100"],
+        "resposta_certa": "A) 144",
+        "tempo": 15
+    },
+    {
+        "pergunta": "Quanto é 7²?",
+        "opcoes": ["A) 49", "B) 56", "C) 63", "D) 64"],
+        "resposta_certa": "A) 49",
+        "tempo": 12
+    },
+    {
+        "pergunta": "Quanto é 4 × 6?",
+        "opcoes": ["A) 24", "B) 22", "C) 26", "D) 28"],
+        "resposta_certa": "A) 24",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Se f(x) = x + 2, qual é f(8)?",
+        "opcoes": ["A) 8", "B) 9", "C) 10", "D) 12"],
+        "resposta_certa": "C) 10",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Qual é a raiz quadrada de 100?",
+        "opcoes": ["A) 9", "B) 10", "C) 11", "D) 12"],
+        "resposta_certa": "B) 10",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Quanto é 90 ÷ 3?",
+        "opcoes": ["A) 30", "B) 25", "C) 20", "D) 35"],
+        "resposta_certa": "A) 30",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Se um número menos 7 é igual a 10, qual é o número?",
+        "opcoes": ["A) 15", "B) 16", "C) 17", "D) 18"],
+        "resposta_certa": "C) 17",
+        "tempo": 12
+    },
+    {
+        "pergunta": "Quanto é 20% de 250?",
+        "opcoes": ["A) 50", "B) 55", "C) 60", "D) 65"],
+        "resposta_certa": "A) 50",
+        "tempo": 15
+    },
+    {
+        "pergunta": "Se um número ao cubo é 27, qual é o número?",
+        "opcoes": ["A) 2", "B) 3", "C) 4", "D) 5"],
+        "resposta_certa": "B) 3",
+        "tempo": 12
+    },
+    {
+        "pergunta": "Quanto é 12 × 5?",
+        "opcoes": ["A) 60", "B) 65", "C) 70", "D) 75"],
+        "resposta_certa": "A) 60",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Se 75% de um número é 150, qual é o número?",
+        "opcoes": ["A) 180", "B) 190", "C) 200", "D) 210"],
+        "resposta_certa": "C) 200",
+        "tempo": 20
+    },
+    {
+        "pergunta": "Quanto é 17 + 13?",
+        "opcoes": ["A) 30", "B) 31", "C) 32", "D) 33"],
+        "resposta_certa": "A) 30",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Se a soma de dois números é 100 e um deles é 60, qual é o outro?",
+        "opcoes": ["A) 30", "B) 40", "C) 50", "D) 60"],
+        "resposta_certa": "B) 40",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Quanto é 3 × 15?",
+        "opcoes": ["A) 45", "B) 40", "C) 50", "D) 55"],
+        "resposta_certa": "A) 45",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Quanto é 1.000 ÷ 10?",
+        "opcoes": ["A) 10", "B) 100", "C) 1.000", "D) 1.100"],
+        "resposta_certa": "B) 100",
+        "tempo": 10
+    },
+    {
+        "pergunta": "Qual é a raiz quadrada de 400?",
+        "opcoes": ["A) 18", "B) 19", "C) 20", "D) 21"],
+        "resposta_certa": "C) 20",
+        "tempo": 15
+    },
+    {
+        "pergunta": "Se f(x) = 4x, qual é f(5)?",
+        "opcoes": ["A) 15", "B) 20", "C) 25", "D) 30"],
+        "resposta_certa": "B) 20",
+        "tempo": 12
+    },
+    {
+        "pergunta": "Quanto é 3⁴?",
+        "opcoes": ["A) 27", "B) 64", "C) 81", "D) 243"],
+        "resposta_certa": "C) 81",
+        "tempo": 15
+    },
+    {
+        "pergunta": "Qual é a área de um triângulo com base 10 e altura 8?",
+        "opcoes": ["A) 40", "B) 45", "C) 50", "D) 55"],
+        "resposta_certa": "C) 50",
+        "tempo": 15
+    },
+    {
+        "pergunta": "Quanto é 6 × 9?",
+        "opcoes": ["A) 54", "B) 56", "C) 58", "D) 60"],
+        "resposta_certa": "A) 54",
+        "tempo": 10
     }
 ]
