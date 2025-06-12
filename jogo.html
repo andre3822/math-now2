@@ -215,7 +215,7 @@
   async function carregarPerguntas() {
     const response = await fetch("perguntas.json");
     const dados = await response.json();
-    perguntas = embaralhar(dados).slice(0, 15);
+    perguntas = embaralhar(dados).slice(0, 10);
     iniciarQuiz();
   }
 
