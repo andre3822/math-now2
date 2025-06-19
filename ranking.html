@@ -68,7 +68,7 @@
 <body>
 
   <div class="ranking-container">
-    <h1 class="ranking-title">TOP 20 CLASSIFICAÇÕES</h1>
+    <h1 class="ranking-title">TOP 50 CLASSIFICAÇÕES</h1>
     <div class="ranking-list" id="ranking-list">
       <p>Carregando ranking...</p>
     </div>
@@ -89,7 +89,7 @@
           return;
         }
 
-        dados.forEach((jogador, i) => {
+        dados.slice(0, 50).forEach((jogador, i) => {
           const item = document.createElement('div');
           item.className = 'ranking-item';
           item.innerHTML = `

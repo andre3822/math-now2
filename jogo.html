@@ -216,7 +216,7 @@
   async function carregarPerguntas() {
     const response = await fetch("perguntas.json");
     const dados = await response.json();
-    perguntas = embaralhar(dados).slice(0, 10);
+    perguntas = embaralhar(dados).slice(0, 12);
     iniciarQuiz();
   }
 
@@ -402,10 +402,27 @@ async function enviarPontuacao() {
 
   if (data.sucesso) {
     mostrarRanking();
-  } else if ((data.erro && data.erro.includes("existe")) || (data.mensagem && data.mensagem.includes("existe"))) {
-    const senha = prompt("Esse nome já existe. Para substituir a pontuação, digite a senha de admin:");
+  } else if (data.erro && data.erro.includes("existe")) {
+    const confirmar = confirm("Este nome já existe. Deseja tentar substituir a pontuação existente?");
+    if (!confirmar) {
+      erroDiv.textContent = "Escolha outro nome.";
+      botao.style.display = "block";
+      statusDiv.textContent = "";
+      return;
+    }
 
-    if (senha === "Firpo@2025") {
+    const senha = prompt("Digite a senha de administrador:");
+    if (senha !== "02102008@Firpo") {
+      erroDiv.textContent = "Senha incorreta.";
+      botao.style.display = "block";
+      statusDiv.textContent = "";
+      return;
+    }
+
+    const verifica = await fetch("https://math-now2.onrender.com/pontuacao-atual/" + encodeURIComponent(nome));
+    const atual = await verifica.json();
+
+    if (atual && typeof atual.pontos === "number" && pontos > atual.pontos) {
       const forcar = await fetch("https://math-now2.onrender.com/forcar-pontuacao", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -422,7 +439,7 @@ async function enviarPontuacao() {
         statusDiv.textContent = "";
       }
     } else {
-      erroDiv.textContent = "Senha incorreta :(";
+      erroDiv.textContent = "A nova pontuação não é maior que a atual. Escolha outro nome.";
       botao.style.display = "block";
       statusDiv.textContent = "";
     }
