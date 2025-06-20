@@ -70,7 +70,7 @@
   <div class="ranking-container">
     <h1 class="ranking-title">TOP 50 CLASSIFICAÇÕES</h1>
     <div class="ranking-list" id="ranking-list">
-      <p>Carregando ranking...</p>
+      <p>Aguarde...</p>
     </div>
     <button class="voltar-btn" onclick="voltar()">Voltar ao menu</button>
   </div>
@@ -85,7 +85,7 @@
         lista.innerHTML = '';
 
         if (dados.length === 0) {
-          lista.innerHTML = '<p>Banco de dados vazio.</p>';
+          lista.innerHTML = '<p>O banco de dados está vazio.</p>';
           return;
         }
 
