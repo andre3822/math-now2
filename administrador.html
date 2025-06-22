@@ -13,7 +13,7 @@
     }
 
     .admin-title {
-    color: #77135b;
+      color: #77135b;
       font-size: 2.5rem;
       margin-bottom: 20px;
     }
@@ -72,32 +72,44 @@
   </div>
 
   <script>
-  async function carregarTabela() {
-    const resposta = await fetch('https://math-now2.onrender.com/api/jogadores');
-    const dados = await resposta.json();
-    const tabela = document.getElementById('dadosTabela');
-    tabela.innerHTML = '';
+    async function carregarTabela() {
+      try {
+        const resposta = await fetch('https://math-now2.onrender.com/api/jogadores');
+        const dados = await resposta.json();
+        const tabela = document.getElementById('dadosTabela');
+        tabela.innerHTML = '';
 
-    dados.forEach((item) => {
-      const linha = document.createElement('tr');
-      linha.innerHTML = `
-        <td>${item.id}</td>
-        <td>${item.nome}</td>
-        <td>${item.pontuacao}</td>
-        <td><button class="remover" onclick="remover(${item.id})">Remover</button></td>
-      `;
-      tabela.appendChild(linha);
-    });
-  }
-
-  async function remover(id) {
-    if (confirm('Tem certeza que deseja remover?')) {
-      await fetch(`https://math-now2.onrender.com/api/jogadores/${id}`, { method: 'DELETE' });
-      carregarTabela();
+        dados.forEach((item) => {
+          const linha = document.createElement('tr');
+          linha.innerHTML = `
+            <td>${item.id}</td>
+            <td>${item.nome}</td>
+            <td>${item.pontuacao}</td>
+            <td><button class="remover" onclick="remover(${item.id})">Remover</button></td>
+          `;
+          tabela.appendChild(linha);
+        });
+      } catch (erro) {
+        console.error('Erro ao carregar dados:', erro);
+        document.getElementById('dadosTabela').innerHTML = '<tr><td colspan="4">Erro ao carregar dados.</td></tr>';
+      }
     }
-  }
 
-  carregarTabela();
-</script>
+    async function remover(id) {
+      if (confirm('Tem certeza que deseja remover?')) {
+        try {
+          await fetch(`https://math-now2.onrender.com/api/jogadores/${id}`, {
+            method: 'DELETE'
+          });
+          carregarTabela();
+        } catch (erro) {
+          alert('Erro ao tentar remover jogador.');
+          console.error(erro);
+        }
+      }
+    }
+
+    carregarTabela();
+  </script>
 </body>
 </html>

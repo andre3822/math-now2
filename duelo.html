@@ -1,0 +1,331 @@
+<!-- Começo do HTML -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Now - Duelo</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body, html {
+      width: 100%;
+      height: 100%;
+      background: url("img/background.avif") center/cover no-repeat;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .prepare {
+      font-size: 4rem;
+      color: rgb(240, 240, 240);
+      font-weight: bold;
+      animation: fadeInOut 4s forwards;
+    }
+    .countdown-img {
+      width: 200px;
+      animation: popIn 1s forwards;
+    }
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: scale(0.8); }
+      10% { opacity: 1; transform: scale(1); }
+      90% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.2); }
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    #question-container {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .timer {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      transition: color 0.5s ease;
+      z-index: 10;
+      display: none;
+    }
+    .question {
+      font-size: 2.5rem;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+    }
+    .respostas {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-resposta {
+      padding: 15px 30px;
+      background-color: #9333ea;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.3rem;
+      cursor: default;
+      color: white;
+      transition: background 0.3s ease;
+    }
+    .feedback {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .correct { color: #5cd388; }
+    .incorrect { color: #a31a1a; }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.219);
+      z-index: 0;
+    }
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="timer" id="timer">Tempo: 20s</div>
+<div id="container">
+  <div id="prepare-text" class="prepare">PREPARE-SE</div>
+  <img id="countdown" class="countdown-img" src="" alt="" style="display: none;" />
+  <div id="question-container">
+    <div class="question" id="pergunta">Ocorreu um erro ao carregar a pergunta.</div>
+  </div>
+</div>
+
+<script>
+let perguntas = [], perguntaAtual = 0, timer = 20, timerInterval;
+let pontos1 = 0, pontos2 = 0, respondeu = false;
+let nome1 = "", nome2 = "";
+let tecla1 = null, tecla2 = null;
+
+const prepareText = document.getElementById("prepare-text");
+const countdownImg = document.getElementById("countdown");
+const questionContainer = document.getElementById("question-container");
+const timerDisplay = document.getElementById("timer");
+
+function updateTimerColor() {
+  timerDisplay.style.color = timer > 15 ? "#fff" : timer > 10 ? "#E15400" : timer > 5 ? "#FF2C00" : "#FF011B";
+}
+
+function startTimer() {
+  timer = perguntas[perguntaAtual].tempo || 20;
+  timerDisplay.textContent = `Tempo: ${timer}s`;
+  updateTimerColor();
+  timerInterval = setInterval(() => {
+    timer--;
+    timerDisplay.textContent = `Tempo: ${timer}s`;
+    updateTimerColor();
+    if (timer <= 0) {
+      clearInterval(timerInterval);
+      processResposta();
+    }
+  }, 1000);
+}
+
+function embaralhar(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+async function carregarPerguntas() {
+  const res = await fetch("perguntas.json");
+  const dados = await res.json();
+  perguntas = embaralhar(dados).slice(0, 10);
+  iniciarQuiz();
+}
+
+function iniciarQuiz() {
+  perguntaAtual = 0;
+  pontos1 = 0;
+  pontos2 = 0;
+  mostrarContagemInicial();
+}
+
+function mostrarContagemInicial() {
+  questionContainer.style.display = "none";
+  timerDisplay.style.display = "none";
+  countdownImg.style.display = "block";
+  const imagens = ["img/Icones/3.png", "img/Icones/2.png", "img/Icones/1.png"];
+  let index = 0;
+
+  function animarContagem() {
+    if (index < imagens.length) {
+      countdownImg.src = imagens[index++];
+      countdownImg.classList.remove("countdown-img");
+      void countdownImg.offsetWidth;
+      countdownImg.classList.add("countdown-img");
+      setTimeout(animarContagem, 1000);
+    } else {
+      countdownImg.style.display = "none";
+      mostrarPergunta();
+    }
+  }
+  animarContagem();
+}
+
+function mostrarPergunta() {
+  respondeu = false;
+  tecla1 = null;
+  tecla2 = null;
+  const pergunta = perguntas[perguntaAtual];
+  const letras = ['A', 'B', 'C', 'D'];
+  questionContainer.innerHTML = `
+    <div class="question">${pergunta.pergunta}</div>
+    <div class="respostas"></div>
+  `;
+  const respostasDiv = questionContainer.querySelector('.respostas');
+  pergunta.opcoes.forEach((opcao) => {
+    const div = document.createElement("div");
+    div.className = "btn-resposta";
+    div.textContent = opcao;
+    respostasDiv.appendChild(div);
+  });
+
+  questionContainer.style.display = "flex";
+  timerDisplay.style.display = "block";
+  startTimer();
+}
+
+function teclaParaLetra(tecla) {
+  const map1 = { a: 'A', s: 'B', d: 'C', f: 'D' };
+  const map2 = { j: 'A', k: 'B', l: 'C', 'ç': 'D' };
+  return map1[tecla] || map2[tecla] || null;
+}
+
+function processResposta() {
+  if (respondeu) return;
+  respondeu = true;
+  clearInterval(timerInterval);
+
+  const tempoUsado = timer;
+  const correta = perguntas[perguntaAtual].resposta_certa.trim().charAt(0).toUpperCase();
+  const resp1 = teclaParaLetra(tecla1)?.toUpperCase();
+  const resp2 = teclaParaLetra(tecla2)?.toUpperCase();
+
+  if (resp1 === correta) pontos1 += tempoUsado * 10;
+  if (resp2 === correta) pontos2 += tempoUsado * 10;
+
+  const msg = `
+    ${nome1}: ${resp1 || "sem resposta"} ${resp1 === correta ? "✔️" : "❌"} +${resp1 === correta ? tempoUsado * 10 : 0}<br>
+    ${nome2}: ${resp2 || "sem resposta"} ${resp2 === correta ? "✔️" : "❌"} +${resp2 === correta ? tempoUsado * 10 : 0}
+  `;
+  mostrarFeedback(msg);
+}
+
+function mostrarFeedback(texto) {
+  questionContainer.style.display = "none";
+  timerDisplay.style.display = "none";
+  
+  const restantes = perguntas.length - perguntaAtual - 1;
+
+  const tela = document.createElement("div");
+  tela.style.cssText = `
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); display: flex; justify-content: center;
+    align-items: center; flex-direction: column; font-size: 1.8rem; color: white;
+    text-align: center;
+  `;
+  tela.innerHTML = `
+    <div>${texto}</div>
+    <div style="margin-top: 15px; font-size: 1.3rem; color: #ccc;">
+      Faltam ${restantes} pergunta${restantes === 1 ? '' : 's'}
+    </div>
+  `;
+  document.body.appendChild(tela);
+
+  setTimeout(() => {
+    document.body.removeChild(tela);
+    perguntaAtual++;
+    if (perguntaAtual < perguntas.length) {
+      mostrarContagemInicial();
+    } else {
+      mostrarFim();
+    }
+  }, 3000);
+}
+
+function mostrarFim() {
+  let vencedor = pontos1 > pontos2 ? nome1 : pontos2 > pontos1 ? nome2 : "Empate";
+  questionContainer.innerHTML = `
+    <div class="question">FIM DE JOGO</div>
+    <div class="feedback correct" style="font-size: 2rem;">
+      ${nome1}: ${pontos1} pts<br>${nome2}: ${pontos2} pts
+    </div>
+    <div style="font-size: 1.5rem; margin-top: 15px;">Vencedor: <strong>${vencedor}</strong></div>
+    <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; font-size: 1rem; background-color: #9333ea; color: white; border: none; border-radius: 8px; cursor: pointer;">
+      Jogar Novamente
+    </button>
+  `;
+  questionContainer.style.display = "flex";
+}
+
+document.addEventListener("keydown", (e) => {
+  if (respondeu) return;
+
+  const tecla = e.key.toLowerCase();
+
+  if (["a", "s", "d", "f"].includes(tecla) && !tecla1) {
+    tecla1 = tecla;
+  }
+
+  if (["j", "k", "l", "ç"].includes(tecla) && !tecla2) {
+    tecla2 = tecla;
+  }
+
+  if (tecla1 || tecla2) {
+    const somClick = document.getElementById("efeitoClick");
+    if (somClick) {
+      somClick.currentTime = 0;
+      somClick.play().catch(() => {});
+    }
+  }
+
+  if (tecla1 && tecla2) {
+    processResposta();
+  }
+});
+
+function pedirNomes() {
+  nome1 = prompt("Digite o nome do Jogador 1:").trim() || "Jogador 1";
+  nome2 = prompt("Digite o nome do Jogador 2:").trim() || "Jogador 2";
+  carregarPerguntas();
+}
+
+pedirNomes();
+</script>
+<audio id="efeitoClick" src="snd/efeito_click.mp3" preload="auto"></audio>
+</body>
+</html>
