@@ -13,9 +13,25 @@
     }
 
     .admin-title {
-      color: #77135b;
+      color: #be1433;
       font-size: 2.5rem;
       margin-bottom: 20px;
+    }
+
+    .voltar-button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 50px auto 30px;
+      font-size: 1rem;
+      display: block;
+    }
+
+    .voltar-button:hover {
+      background-color: #2980b9;
     }
 
     table {
@@ -55,7 +71,7 @@
 <body>
   <div id="main-menu">
     <div class="background-overlay admin-container">
-      <h1 class="admin-title">Painel Banco de Dados</h1>
+      <h1 class="admin-title">Banco de Dados</h1>
       <table>
         <thead>
           <tr>
@@ -72,6 +88,20 @@
   </div>
 
   <script>
+  let keysPressed = [];
+
+  document.addEventListener('keydown', (event) => {
+    keysPressed.push(event.key.toLowerCase());
+    
+    if (keysPressed.length > 3) {
+      keysPressed.shift();
+    }
+
+    if (keysPressed.join('') === 'bk') {
+      window.location.href = 'index.html';
+    }
+  });
+
     async function carregarTabela() {
       try {
         const resposta = await fetch('https://math-now2.onrender.com/api/jogadores');

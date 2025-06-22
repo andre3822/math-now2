@@ -38,6 +38,20 @@
   </div>
 
   <script>
+  let keysPressed = [];
+
+  document.addEventListener('keydown', (event) => {
+    keysPressed.push(event.key.toLowerCase());
+    
+    if (keysPressed.length > 3) {
+      keysPressed.shift();
+    }
+
+    if (keysPressed.join('') === 'adm') {
+      window.location.href = 'administrador.html';
+    }
+  });
+
   window.addEventListener('load', () => {
     const logo = document.querySelector('.logo');
     const spinner = document.querySelector('.bagulho-que-roda');

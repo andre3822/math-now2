@@ -1,452 +1,1102 @@
 [
-    {
-        "pergunta": "Quanto é 3 vezes 3?",
-        "opcoes": ["A) 6", "B) 9", "C) 12", "D) 27"],
-        "resposta_certa": "B) 9",
-        "tempo": 20
-    },
-    {
-        "pergunta": "João tem 50 reais e gasta 32. Quanto sobra?",
-        "opcoes": ["A) 18", "B) 20", "C) 22", "D) 28"],
-        "resposta_certa": "A) 18",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quanto é 2 + 2?",
-        "opcoes": ["A) 2", "B) 3", "C) 4", "D) 5"],
-        "resposta_certa": "C) 4",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se um triângulo tem dois lados 3 e 4, quanto é 3 + 4?",
-        "opcoes": ["A) 5", "B) 6", "C) 7", "D) 8"],
-        "resposta_certa": "C) 7",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quanto é 2 × 2 × 2 × 2 × 2?",
-        "opcoes": ["A) 32", "B) 16", "C) 64", "D) 48"],
-        "resposta_certa": "A) 32",
-        "tempo": 25
-    },
-    {
-        "pergunta": "Se um bolo custa 10 reais, quantos bolos dá para comprar com 50 reais?",
-        "opcoes": ["A) 4", "B) 5", "C) 6", "D) 7"],
-        "resposta_certa": "B) 5",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quanto é 100 dividido por 10?",
-        "opcoes": ["A) 5", "B) 10", "C) 20", "D) 25"],
-        "resposta_certa": "B) 10",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Se um carro anda 60 km em 1 hora, quantos km anda em 3 horas?",
-        "opcoes": ["A) 120", "B) 180", "C) 150", "D) 90"],
-        "resposta_certa": "B) 180",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quanto é 7 × 8?",
-        "opcoes": ["A) 54", "B) 56", "C) 64", "D) 58"],
-        "resposta_certa": "B) 56",
-        "tempo": 12
-    },
-    {
-        "pergunta": "Quanto é 10 + 20?",
-        "opcoes": ["A) 30", "B) 35", "C) 25", "D) 20"],
-        "resposta_certa": "A) 30",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quanto é 12 × 12?",
-        "opcoes": ["A) 124", "B) 142", "C) 144", "D) 132"],
-        "resposta_certa": "C) 144",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Qual número vezes 4 dá 200?",
-        "opcoes": ["A) 50", "B) 60", "C) 70", "D) 80"],
-        "resposta_certa": "A) 50",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quanto é 9 × 7?",
-        "opcoes": ["A) 63", "B) 64", "C) 62", "D) 67"],
-        "resposta_certa": "A) 63",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quanto é 100 + 100?",
-        "opcoes": ["A) 100", "B) 150", "C) 200", "D) 300"],
-        "resposta_certa": "C) 200",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quanto é 5 × 5 × 5?",
-        "opcoes": ["A) 100", "B) 125", "C) 150", "D) 225"],
-        "resposta_certa": "B) 125",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se um quadrado tem lado 8, quanto é 8 × 8?",
-        "opcoes": ["A) 64", "B) 16", "C) 32", "D) 48"],
-        "resposta_certa": "A) 64",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quanto é 20 + 15?",
-        "opcoes": ["A) 35", "B) 30", "C) 40", "D) 25"],
-        "resposta_certa": "A) 35",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se você tem 10 balas e dá 3 para seu amigo, com quantas você fica?",
-        "opcoes": ["A) 6", "B) 7", "C) 8", "D) 9"],
-        "resposta_certa": "B) 7",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quanto é 6 × 6?",
-        "opcoes": ["A) 30", "B) 36", "C) 42", "D) 48"],
-        "resposta_certa": "B) 36",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se você tem 3 caixas com 4 brinquedos cada, quantos brinquedos tem no total?",
-        "opcoes": ["A) 7", "B) 10", "C) 12", "D) 14"],
-        "resposta_certa": "C) 12",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Em uma sala há 28 alunos. Se 12 são meninas, quantos são meninos?",
-        "opcoes": ["A) 14", "B) 15", "C) 16", "D) 17"],
-        "resposta_certa": "C) 16",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Um ônibus sai às 14h e chega às 17h. Quanto tempo durou a viagem?",
-        "opcoes": ["A) 2 horas", "B) 3 horas", "C) 4 horas", "D) 5 horas"],
-        "resposta_certa": "B) 3 horas",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Se você comprar 3 cadernos por R$15 cada, quanto irá pagar no total?",
-        "opcoes": ["A) R$30", "B) R$35", "C) R$45", "D) R$50"],
-        "resposta_certa": "C) R$45",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quantas dezenas há em 80?",
-        "opcoes": ["A) 6", "B) 7", "C) 8", "D) 9"],
-        "resposta_certa": "C) 8",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quanto é 48 dividido por 6?",
-        "opcoes": ["A) 6", "B) 7", "C) 8", "D) 9"],
-        "resposta_certa": "C) 8",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se uma dúzia de ovos custa R$6, quanto custa meia dúzia?",
-        "opcoes": ["A) R$2", "B) R$3", "C) R$4", "D) R$5"],
-        "resposta_certa": "B) R$3",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Qual é o número anterior a 100?",
-        "opcoes": ["A) 98", "B) 99", "C) 101", "D) 97"],
-        "resposta_certa": "B) 99",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Quanto é 100 - 45?",
-        "opcoes": ["A) 65", "B) 55", "C) 50", "D) 45"],
-        "resposta_certa": "A) 55",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se você juntar duas notas de R$50, quanto terá?",
-        "opcoes": ["A) R$50", "B) R$100", "C) R$150", "D) R$200"],
-        "resposta_certa": "B) R$100",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Quantos dias há em duas semanas?",
-        "opcoes": ["A) 12", "B) 13", "C) 14", "D) 15"],
-        "resposta_certa": "C) 14",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Quantos minutos tem meia hora?",
-        "opcoes": ["A) 20", "B) 30", "C) 40", "D) 60"],
-        "resposta_certa": "B) 30",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Quantos lados tem um hexágono?",
-        "opcoes": ["A) 5", "B) 6", "C) 7", "D) 8"],
-        "resposta_certa": "B) 6",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se Pedro leu 12 páginas por dia durante 5 dias, quantas páginas ele leu no total?",
-        "opcoes": ["A) 50", "B) 55", "C) 60", "D) 65"],
-        "resposta_certa": "C) 60",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Qual é a metade de 120?",
-        "opcoes": ["A) 50", "B) 60", "C) 70", "D) 80"],
-        "resposta_certa": "B) 60",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se um cachorro tem 4 patas, quantas patas têm 6 cachorros?",
-        "opcoes": ["A) 20", "B) 22", "C) 24", "D) 26"],
-        "resposta_certa": "C) 24",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quanto é 90 dividido por 10?",
-        "opcoes": ["A) 8", "B) 9", "C) 10", "D) 11"],
-        "resposta_certa": "B) 9",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se você tem R$5 e ganha mais R$12, com quanto fica?",
-        "opcoes": ["A) R$15", "B) R$16", "C) R$17", "D) R$18"],
-        "resposta_certa": "C) R$17",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quantos meses tem um ano?",
-        "opcoes": ["A) 10", "B) 11", "C) 12", "D) 13"],
-        "resposta_certa": "C) 12",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Se um refrigerante custa R$8 e você tem R$20, quantos pode comprar?",
-        "opcoes": ["A) 1", "B) 2", "C) 3", "D) 4"],
-        "resposta_certa": "B) 2",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quantos zeros tem o número mil?",
-        "opcoes": ["A) 1", "B) 2", "C) 3", "D) 4"],
-        "resposta_certa": "C) 3",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Se um pacote tem 10 balas e você compra 4 pacotes, quantas balas terá?",
-        "opcoes": ["A) 30", "B) 35", "C) 40", "D) 45"],
-        "resposta_certa": "C) 40",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Qual o maior número entre 45, 60, 59 e 52?",
-        "opcoes": ["A) 45", "B) 60", "C) 59", "D) 52"],
-        "resposta_certa": "B) 60",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Se uma semana tem 7 dias, quantos dias há em 4 semanas?",
-        "opcoes": ["A) 21", "B) 28", "C) 30", "D) 31"],
-        "resposta_certa": "B) 28",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quantas centenas tem o número 500?",
-        "opcoes": ["A) 3", "B) 4", "C) 5", "D) 6"],
-        "resposta_certa": "C) 5",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Quantos segundos tem um minuto?",
-        "opcoes": ["A) 30", "B) 45", "C) 60", "D) 90"],
-        "resposta_certa": "C) 60",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Se Ana tem 72 figurinhas e dá 20 para sua amiga, com quantas ela fica?",
-        "opcoes": ["A) 52", "B) 54", "C) 56", "D) 58"],
-        "resposta_certa": "A) 52",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quantos lados tem um triângulo?",
-        "opcoes": ["A) 2", "B) 3", "C) 4", "D) 5"],
-        "resposta_certa": "B) 3",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Se um bolo custa R$25 e você tem R$100, quantos bolos pode comprar?",
-        "opcoes": ["A) 3", "B) 4", "C) 5", "D) 6"],
-        "resposta_certa": "C) 4",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quantas dezenas tem o número 140?",
-        "opcoes": ["A) 12", "B) 13", "C) 14", "D) 15"],
-        "resposta_certa": "C) 14",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Qual o menor número entre 92, 85, 100 e 87?",
-        "opcoes": ["A) 85", "B) 87", "C) 92", "D) 100"],
-        "resposta_certa": "A) 85",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Quanto é 11 vezes 5?",
-        "opcoes": ["A) 45", "B) 55", "C) 50", "D) 60"],
-        "resposta_certa": "B) 55",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se um caminhão carrega 30 caixas por viagem, quantas caixas em 3 viagens?",
-        "opcoes": ["A) 60", "B) 70", "C) 90", "D) 100"],
-        "resposta_certa": "C) 90",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Um cinema tem 10 fileiras com 8 cadeiras. Quantas cadeiras no total?",
-        "opcoes": ["A) 80", "B) 70", "C) 90", "D) 100"],
-        "resposta_certa": "A) 80",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quanto falta para 100 se já tenho 68?",
-        "opcoes": ["A) 28", "B) 30", "C) 32", "D) 34"],
-        "resposta_certa": "C) 32",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se um time fez 3 gols por jogo em 4 partidas, quantos gols no total?",
-        "opcoes": ["A) 10", "B) 11", "C) 12", "D) 13"],
-        "resposta_certa": "C) 12",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quantos metros há em 1 quilômetro?",
-        "opcoes": ["A) 100", "B) 500", "C) 1000", "D) 1500"],
-        "resposta_certa": "C) 1000",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se um mês tem 30 dias, quantos dias têm 2 meses?",
-        "opcoes": ["A) 60", "B) 62", "C) 59", "D) 58"],
-        "resposta_certa": "A) 60",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Qual número vem depois de 149?",
-        "opcoes": ["A) 148", "B) 150", "C) 151", "D) 152"],
-        "resposta_certa": "B) 150",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Quanto é 10 + 15 + 20?",
-        "opcoes": ["A) 35", "B) 40", "C) 45", "D) 50"],
-        "resposta_certa": "C) 45",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se um lápis custa R$3, quantos você compra com R$15?",
-        "opcoes": ["A) 3", "B) 4", "C) 5", "D) 6"],
-        "resposta_certa": "D) 5",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Qual é a soma de 60 + 25?",
-        "opcoes": ["A) 85", "B) 75", "C) 95", "D) 90"],
-        "resposta_certa": "A) 85",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Qual é a diferença entre 100 e 37?",
-        "opcoes": ["A) 62", "B) 63", "C) 64", "D) 65"],
-        "resposta_certa": "B) 63",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se 1 caixa tem 24 lápis, quantos lápis em 2 caixas?",
-        "opcoes": ["A) 46", "B) 48", "C) 50", "D) 52"],
-        "resposta_certa": "B) 48",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quanto é 9 × 4?",
-        "opcoes": ["A) 36", "B) 35", "C) 34", "D) 33"],
-        "resposta_certa": "A) 36",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quantos dias tem um mês de fevereiro em anos normais?",
-        "opcoes": ["A) 28", "B) 29", "C) 30", "D) 31"],
-        "resposta_certa": "A) 28",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Quantos olhos têm 7 pessoas?",
-        "opcoes": ["A) 12", "B) 14", "C) 16", "D) 18"],
-        "resposta_certa": "B) 14",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Se um pão custa R$2 e você tem R$12, quantos pode comprar?",
-        "opcoes": ["A) 5", "B) 6", "C) 7", "D) 8"],
-        "resposta_certa": "B) 6",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quanto é 8 vezes 6?",
-        "opcoes": ["A) 42", "B) 46", "C) 48", "D) 50"],
-        "resposta_certa": "C) 48",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Quantas centenas tem o número 900?",
-        "opcoes": ["A) 7", "B) 8", "C) 9", "D) 10"],
-        "resposta_certa": "C) 9",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Se você comeu 2 fatias de uma pizza com 8, quanto sobrou?",
-        "opcoes": ["A) 5", "B) 6", "C) 7", "D) 8"],
-        "resposta_certa": "B) 6",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Qual número multiplicado por 7 resulta em 56?",
-        "opcoes": ["A) 6", "B) 7", "C) 8", "D) 9"],
-        "resposta_certa": "C) 8",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Se um livro tem 120 páginas e você lê 30 por dia, em quantos dias termina?",
-        "opcoes": ["A) 3", "B) 4", "C) 5", "D) 6"],
-        "resposta_certa": "C) 4",
-        "tempo": 20
-    },
-    {
-        "pergunta": "Quanto é 13 + 17?",
-        "opcoes": ["A) 29", "B) 30", "C) 31", "D) 32"],
-        "resposta_certa": "C) 30",
-        "tempo": 15
-    },
-    {
-        "pergunta": "Qual é o sucessor de 199?",
-        "opcoes": ["A) 198", "B) 199", "C) 200", "D) 201"],
-        "resposta_certa": "C) 200",
-        "tempo": 10
-    },
-    {
-        "pergunta": "Se um lápis mede 18 cm, quanto mede 5 lápis juntos?",
-        "opcoes": ["A) 90 cm", "B) 80 cm", "C) 70 cm", "D) 60 cm"],
-        "resposta_certa": "A) 90 cm",
-        "tempo": 15
-    }
+  {
+    "pergunta": "Ana tinha 45 canetas e ganhou mais 38. Com quantos canetas ele ficou?",
+    "opcoes": [
+      "A) 88",
+      "B) 79",
+      "C) 77",
+      "D) 83"
+    ],
+    "resposta_certa": "D) 83",
+    "tempo": 23
+  },
+  {
+    "pergunta": "Quanto é 8 × 8?",
+    "opcoes": [
+      "A) 64",
+      "B) 70",
+      "C) 66",
+      "D) 61"
+    ],
+    "resposta_certa": "A) 64",
+    "tempo": 13
+  },
+  {
+    "pergunta": "Carlos tinha 67 balas e gastou 39. Com quantos balas ela ficou?",
+    "opcoes": [
+      "A) 20",
+      "B) 19",
+      "C) 28",
+      "D) 23"
+    ],
+    "resposta_certa": "C) 28",
+    "tempo": 23
+  },
+  {
+    "pergunta": "Quanto é 98 + 90?",
+    "opcoes": [
+      "A) 198",
+      "B) 182",
+      "C) 197",
+      "D) 188"
+    ],
+    "resposta_certa": "D) 188",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Joana tinha 23 balas e dividiu igualmente entre 4 amigas. Quantos balas cada uma recebeu?",
+    "opcoes": [
+      "A) 5",
+      "B) 9",
+      "C) 6",
+      "D) 7"
+    ],
+    "resposta_certa": "A) 5",
+    "tempo": 18
+  },
+  {
+    "pergunta": "Quanto é 8 × 11?",
+    "opcoes": [
+      "A) 80",
+      "B) 88",
+      "C) 79",
+      "D) 83"
+    ],
+    "resposta_certa": "B) 88",
+    "tempo": 10
+  },
+  {
+    "pergunta": "Quanto é 93 - 18?",
+    "opcoes": [
+      "A) 75",
+      "B) 68",
+      "C) 76",
+      "D) 74"
+    ],
+    "resposta_certa": "A) 75",
+    "tempo": 11
+  },
+  {
+    "pergunta": "Clara tinha 52 canetas e dividiu igualmente entre 4 amigas. Quantos canetas cada uma recebeu?",
+    "opcoes": [
+      "A) 21",
+      "B) 8",
+      "C) 13",
+      "D) 16"
+    ],
+    "resposta_certa": "C) 13",
+    "tempo": 23
+  },
+  {
+    "pergunta": "Clara tinha 38 livros e ganhou mais 38. Com quantos livros ele ficou?",
+    "opcoes": [
+      "A) 68",
+      "B) 76",
+      "C) 80",
+      "D) 79"
+    ],
+    "resposta_certa": "B) 76",
+    "tempo": 20
+  },
+  {
+    "pergunta": "Lucas tinha 10 canetas e ganhou mais 48. Com quantos canetas ele ficou?",
+    "opcoes": [
+      "A) 59",
+      "B) 58",
+      "C) 56",
+      "D) 51"
+    ],
+    "resposta_certa": "B) 58",
+    "tempo": 18
+  },
+  {
+    "pergunta": "Maria tinha 16 figurinhas e ganhou mais 21. Com quantos figurinhas ele ficou?",
+    "opcoes": [
+      "A) 33",
+      "B) 37",
+      "C) 38",
+      "D) 40"
+    ],
+    "resposta_certa": "B) 37",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Pedro tinha 136 maçãs e gastou 63. Com quantos maçãs ela ficou?",
+    "opcoes": [
+      "A) 63",
+      "B) 73",
+      "C) 66",
+      "D) 70"
+    ],
+    "resposta_certa": "B) 73",
+    "tempo": 16
+  },
+  {
+    "pergunta": "Pedro tinha 198 figurinhas e gastou 150. Com quantos figurinhas ela ficou?",
+    "opcoes": [
+      "A) 38",
+      "B) 46",
+      "C) 51",
+      "D) 48"
+    ],
+    "resposta_certa": "D) 48",
+    "tempo": 15
+  },
+  {
+    "pergunta": "Joana tinha 38 maçãs e dividiu igualmente entre 3 amigas. Quantos maçãs cada uma recebeu?",
+    "opcoes": [
+      "A) 20",
+      "B) 22",
+      "C) 2",
+      "D) 12"
+    ],
+    "resposta_certa": "D) 12",
+    "tempo": 22
+  },
+  {
+    "pergunta": "Quanto é 108 ÷ 9?",
+    "opcoes": [
+      "A) 13",
+      "B) 12",
+      "C) 7",
+      "D) 10"
+    ],
+    "resposta_certa": "B) 12",
+    "tempo": 17
+  },
+  {
+    "pergunta": "Quanto é 99 - 59?",
+    "opcoes": [
+      "A) 47",
+      "B) 33",
+      "C) 40",
+      "D) 45"
+    ],
+    "resposta_certa": "C) 40",
+    "tempo": 15
+  },
+  {
+    "pergunta": "Quanto é 35 + 72?",
+    "opcoes": [
+      "A) 107",
+      "B) 112",
+      "C) 99",
+      "D) 110"
+    ],
+    "resposta_certa": "A) 107",
+    "tempo": 14
+  },
+  {
+    "pergunta": "Quanto é 54 + 54?",
+    "opcoes": [
+      "A) 112",
+      "B) 107",
+      "C) 108",
+      "D) 98"
+    ],
+    "resposta_certa": "C) 108",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Lucas tinha 58 livros e dividiu igualmente entre 3 amigas. Quantos livros cada uma recebeu?",
+    "opcoes": [
+      "A) 9",
+      "B) 18",
+      "C) 19",
+      "D) 10"
+    ],
+    "resposta_certa": "C) 19",
+    "tempo": 25
+  },
+  {
+    "pergunta": "Quanto é 4 × 2?",
+    "opcoes": [
+      "A) -1",
+      "B) 6",
+      "C) 0",
+      "D) 8"
+    ],
+    "resposta_certa": "D) 8",
+    "tempo": 12
+  },
+  {
+    "pergunta": "Maria tinha 88 figurinhas e gastou 81. Com quantos figurinhas ela ficou?",
+    "opcoes": [
+      "A) 5",
+      "B) 7",
+      "C) 4",
+      "D) -3"
+    ],
+    "resposta_certa": "B) 7",
+    "tempo": 15
+  },
+  {
+    "pergunta": "Quanto é 48 ÷ 8?",
+    "opcoes": [
+      "A) 12",
+      "B) 13",
+      "C) 6",
+      "D) -1"
+    ],
+    "resposta_certa": "C) 6",
+    "tempo": 10
+  },
+  {
+    "pergunta": "Lucas tinha 46 reais e dividiu igualmente entre 6 amigas. Quantos reais cada uma recebeu?",
+    "opcoes": [
+      "A) 2",
+      "B) 14",
+      "C) 4",
+      "D) 7"
+    ],
+    "resposta_certa": "D) 7",
+    "tempo": 15
+  },
+  {
+    "pergunta": "Rafael tinha 43 balas e dividiu igualmente entre 5 amigas. Quantos balas cada uma recebeu?",
+    "opcoes": [
+      "A) 8",
+      "B) 17",
+      "C) 16",
+      "D) 4"
+    ],
+    "resposta_certa": "A) 8",
+    "tempo": 23
+  },
+  {
+    "pergunta": "Quanto é 98 + 91?",
+    "opcoes": [
+      "A) 179",
+      "B) 199",
+      "C) 189",
+      "D) 186"
+    ],
+    "resposta_certa": "C) 189",
+    "tempo": 11
+  },
+  {
+    "pergunta": "Quanto é 30 ÷ 5?",
+    "opcoes": [
+      "A) 8",
+      "B) 15",
+      "C) 6",
+      "D) 1"
+    ],
+    "resposta_certa": "C) 6",
+    "tempo": 14
+  },
+  {
+    "pergunta": "Quanto é 90 - 85?",
+    "opcoes": [
+      "A) -2",
+      "B) 9",
+      "C) 5",
+      "D) -5"
+    ],
+    "resposta_certa": "C) 5",
+    "tempo": 16
+  },
+  {
+    "pergunta": "Quanto é 54 + 82?",
+    "opcoes": [
+      "A) 136",
+      "B) 146",
+      "C) 141",
+      "D) 134"
+    ],
+    "resposta_certa": "A) 136",
+    "tempo": 20
+  },
+  {
+    "pergunta": "Quanto é 10 × 12?",
+    "opcoes": [
+      "A) 120",
+      "B) 116",
+      "C) 129",
+      "D) 127"
+    ],
+    "resposta_certa": "A) 120",
+    "tempo": 17
+  },
+  {
+    "pergunta": "Quanto é 12 × 7?",
+    "opcoes": [
+      "A) 82",
+      "B) 88",
+      "C) 84",
+      "D) 87"
+    ],
+    "resposta_certa": "C) 84",
+    "tempo": 18
+  },
+  {
+    "pergunta": "Quanto é 16 ÷ 2?",
+    "opcoes": [
+      "A) 13",
+      "B) 6",
+      "C) 8",
+      "D) 18"
+    ],
+    "resposta_certa": "C) 8",
+    "tempo": 16
+  },
+  {
+    "pergunta": "Maria tinha 131 livros e gastou 124. Com quantos livros ela ficou?",
+    "opcoes": [
+      "A) 14",
+      "B) 7",
+      "C) 5",
+      "D) 16"
+    ],
+    "resposta_certa": "B) 7",
+    "tempo": 15
+  },
+  {
+    "pergunta": "Lucas tinha 67 balas e gastou 52. Com quantos balas ela ficou?",
+    "opcoes": [
+      "A) 16",
+      "B) 15",
+      "C) 12",
+      "D) 11"
+    ],
+    "resposta_certa": "B) 15",
+    "tempo": 18
+  },
+  {
+    "pergunta": "Clara tinha 30 balas e dividiu igualmente entre 2 amigas. Quantos balas cada uma recebeu?",
+    "opcoes": [
+      "A) 7",
+      "B) 15",
+      "C) 22",
+      "D) 13"
+    ],
+    "resposta_certa": "B) 15",
+    "tempo": 17
+  },
+  {
+    "pergunta": "Quanto é 61 + 85?",
+    "opcoes": [
+      "A) 154",
+      "B) 146",
+      "C) 138",
+      "D) 148"
+    ],
+    "resposta_certa": "B) 146",
+    "tempo": 17
+  },
+  {
+    "pergunta": "Quanto é 20 - 20?",
+    "opcoes": [
+      "A) 0",
+      "B) -2",
+      "C) 1",
+      "D) 5"
+    ],
+    "resposta_certa": "A) 0",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Joana tinha 72 figurinhas e gastou 12. Com quantos figurinhas ela ficou?",
+    "opcoes": [
+      "A) 69",
+      "B) 56",
+      "C) 60",
+      "D) 62"
+    ],
+    "resposta_certa": "C) 60",
+    "tempo": 20
+  },
+  {
+    "pergunta": "Ana tinha 130 figurinhas e gastou 46. Com quantos figurinhas ela ficou?",
+    "opcoes": [
+      "A) 84",
+      "B) 85",
+      "C) 79",
+      "D) 75"
+    ],
+    "resposta_certa": "A) 84",
+    "tempo": 16
+  },
+  {
+    "pergunta": "Quanto é 59 + 69?",
+    "opcoes": [
+      "A) 124",
+      "B) 120",
+      "C) 137",
+      "D) 128"
+    ],
+    "resposta_certa": "D) 128",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Ana tinha 59 canetas e dividiu igualmente entre 5 amigas. Quantos canetas cada uma recebeu?",
+    "opcoes": [
+      "A) 14",
+      "B) 11",
+      "C) 10",
+      "D) 4"
+    ],
+    "resposta_certa": "B) 11",
+    "tempo": 18
+  },
+  {
+    "pergunta": "Quanto é 17 + 87?",
+    "opcoes": [
+      "A) 104",
+      "B) 114",
+      "C) 113",
+      "D) 112"
+    ],
+    "resposta_certa": "A) 104",
+    "tempo": 14
+  },
+  {
+    "pergunta": "Pedro tinha 40 figurinhas e ganhou mais 31. Com quantos figurinhas ele ficou?",
+    "opcoes": [
+      "A) 72",
+      "B) 71",
+      "C) 70",
+      "D) 80"
+    ],
+    "resposta_certa": "B) 71",
+    "tempo": 20
+  },
+  {
+    "pergunta": "Lucas tinha 26 canetas e ganhou mais 43. Com quantos canetas ele ficou?",
+    "opcoes": [
+      "A) 69",
+      "B) 74",
+      "C) 77",
+      "D) 75"
+    ],
+    "resposta_certa": "A) 69",
+    "tempo": 24
+  },
+  {
+    "pergunta": "Pedro tinha 25 maçãs e ganhou mais 36. Com quantos maçãs ele ficou?",
+    "opcoes": [
+      "A) 65",
+      "B) 61",
+      "C) 52",
+      "D) 60"
+    ],
+    "resposta_certa": "B) 61",
+    "tempo": 22
+  },
+  {
+    "pergunta": "Quanto é 77 - 66?",
+    "opcoes": [
+      "A) 12",
+      "B) 11",
+      "C) 9",
+      "D) 17"
+    ],
+    "resposta_certa": "B) 11",
+    "tempo": 17
+  },
+  {
+    "pergunta": "Rafael tinha 27 canetas e dividiu igualmente entre 3 amigas. Quantos canetas cada uma recebeu?",
+    "opcoes": [
+      "A) 3",
+      "B) 9",
+      "C) 1",
+      "D) 16"
+    ],
+    "resposta_certa": "B) 9",
+    "tempo": 15
+  },
+  {
+    "pergunta": "Pedro tinha 10 balas e ganhou mais 38. Com quantos balas ele ficou?",
+    "opcoes": [
+      "A) 48",
+      "B) 58",
+      "C) 55",
+      "D) 47"
+    ],
+    "resposta_certa": "A) 48",
+    "tempo": 24
+  },
+  {
+    "pergunta": "Maria tinha 21 maçãs e dividiu igualmente entre 6 amigas. Quantos maçãs cada uma recebeu?",
+    "opcoes": [
+      "A) 13",
+      "B) 8",
+      "C) 10",
+      "D) 3"
+    ],
+    "resposta_certa": "D) 3",
+    "tempo": 17
+  },
+  {
+    "pergunta": "Quanto é 55 + 96?",
+    "opcoes": [
+      "A) 151",
+      "B) 144",
+      "C) 147",
+      "D) 150"
+    ],
+    "resposta_certa": "A) 151",
+    "tempo": 10
+  },
+  {
+    "pergunta": "Quanto é 20 - 11?",
+    "opcoes": [
+      "A) 9",
+      "B) 6",
+      "C) 15",
+      "D) 18"
+    ],
+    "resposta_certa": "A) 9",
+    "tempo": 11
+  },
+  {
+    "pergunta": "Maria tinha 60 balas e dividiu igualmente entre 6 amigas. Quantos balas cada uma recebeu?",
+    "opcoes": [
+      "A) 9",
+      "B) 10",
+      "C) 0",
+      "D) 12"
+    ],
+    "resposta_certa": "B) 10",
+    "tempo": 17
+  },
+  {
+    "pergunta": "Carlos tinha 54 livros e dividiu igualmente entre 6 amigas. Quantos livros cada uma recebeu?",
+    "opcoes": [
+      "A) 1",
+      "B) 16",
+      "C) 9",
+      "D) 14"
+    ],
+    "resposta_certa": "C) 9",
+    "tempo": 24
+  },
+  {
+    "pergunta": "Quanto é 66 ÷ 11?",
+    "opcoes": [
+      "A) 12",
+      "B) 6",
+      "C) -3",
+      "D) 3"
+    ],
+    "resposta_certa": "B) 6",
+    "tempo": 16
+  },
+  {
+    "pergunta": "Quanto é 11 × 4?",
+    "opcoes": [
+      "A) 34",
+      "B) 44",
+      "C) 47",
+      "D) 38"
+    ],
+    "resposta_certa": "B) 44",
+    "tempo": 16
+  },
+  {
+    "pergunta": "Carlos tinha 43 balas e ganhou mais 40. Com quantos balas ele ficou?",
+    "opcoes": [
+      "A) 80",
+      "B) 87",
+      "C) 83",
+      "D) 84"
+    ],
+    "resposta_certa": "C) 83",
+    "tempo": 25
+  },
+  {
+    "pergunta": "Ana tinha 102 maçãs e gastou 60. Com quantos maçãs ela ficou?",
+    "opcoes": [
+      "A) 46",
+      "B) 42",
+      "C) 51",
+      "D) 45"
+    ],
+    "resposta_certa": "B) 42",
+    "tempo": 24
+  },
+  {
+    "pergunta": "Quanto é 6 × 2?",
+    "opcoes": [
+      "A) 12",
+      "B) 15",
+      "C) 10",
+      "D) 20"
+    ],
+    "resposta_certa": "A) 12",
+    "tempo": 14
+  },
+  {
+    "pergunta": "Pedro tinha 172 figurinhas e gastou 138. Com quantos figurinhas ela ficou?",
+    "opcoes": [
+      "A) 34",
+      "B) 25",
+      "C) 24",
+      "D) 35"
+    ],
+    "resposta_certa": "A) 34",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Quanto é 9 × 9?",
+    "opcoes": [
+      "A) 74",
+      "B) 81",
+      "C) 80",
+      "D) 89"
+    ],
+    "resposta_certa": "B) 81",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Pedro tinha 45 maçãs e dividiu igualmente entre 2 amigas. Quantos maçãs cada uma recebeu?",
+    "opcoes": [
+      "A) 31",
+      "B) 15",
+      "C) 32",
+      "D) 22"
+    ],
+    "resposta_certa": "D) 22",
+    "tempo": 20
+  },
+  {
+    "pergunta": "Joana tinha 71 maçãs e gastou 55. Com quantos maçãs ela ficou?",
+    "opcoes": [
+      "A) 10",
+      "B) 6",
+      "C) 21",
+      "D) 16"
+    ],
+    "resposta_certa": "D) 16",
+    "tempo": 22
+  },
+  {
+    "pergunta": "Quanto é 144 ÷ 12?",
+    "opcoes": [
+      "A) 12",
+      "B) 20",
+      "C) 13",
+      "D) 17"
+    ],
+    "resposta_certa": "A) 12",
+    "tempo": 18
+  },
+  {
+    "pergunta": "Rafael tinha 26 livros e dividiu igualmente entre 2 amigas. Quantos livros cada uma recebeu?",
+    "opcoes": [
+      "A) 16",
+      "B) 13",
+      "C) 20",
+      "D) 22"
+    ],
+    "resposta_certa": "B) 13",
+    "tempo": 16
+  },
+  {
+    "pergunta": "Quanto é 20 + 43?",
+    "opcoes": [
+      "A) 71",
+      "B) 55",
+      "C) 63",
+      "D) 59"
+    ],
+    "resposta_certa": "C) 63",
+    "tempo": 18
+  },
+  {
+    "pergunta": "Quanto é 81 ÷ 9?",
+    "opcoes": [
+      "A) 14",
+      "B) -1",
+      "C) 9",
+      "D) 10"
+    ],
+    "resposta_certa": "C) 9",
+    "tempo": 16
+  },
+  {
+    "pergunta": "Quanto é 24 ÷ 4?",
+    "opcoes": [
+      "A) 8",
+      "B) 6",
+      "C) 12",
+      "D) 9"
+    ],
+    "resposta_certa": "B) 6",
+    "tempo": 14
+  },
+  {
+    "pergunta": "Pedro tinha 120 maçãs e gastou 13. Com quantos maçãs ela ficou?",
+    "opcoes": [
+      "A) 113",
+      "B) 109",
+      "C) 103",
+      "D) 107"
+    ],
+    "resposta_certa": "D) 107",
+    "tempo": 25
+  },
+  {
+    "pergunta": "Lucas tinha 55 reais e gastou 32. Com quantos reais ela ficou?",
+    "opcoes": [
+      "A) 14",
+      "B) 23",
+      "C) 31",
+      "D) 32"
+    ],
+    "resposta_certa": "B) 23",
+    "tempo": 24
+  },
+  {
+    "pergunta": "Quanto é 50 - 39?",
+    "opcoes": [
+      "A) 11",
+      "B) 8",
+      "C) 15",
+      "D) 16"
+    ],
+    "resposta_certa": "A) 11",
+    "tempo": 10
+  },
+  {
+    "pergunta": "Ana tinha 44 maçãs e gastou 14. Com quantos maçãs ela ficou?",
+    "opcoes": [
+      "A) 30",
+      "B) 39",
+      "C) 21",
+      "D) 32"
+    ],
+    "resposta_certa": "A) 30",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Lucas tinha 50 figurinhas e ganhou mais 24. Com quantos figurinhas ele ficou?",
+    "opcoes": [
+      "A) 81",
+      "B) 84",
+      "C) 74",
+      "D) 82"
+    ],
+    "resposta_certa": "C) 74",
+    "tempo": 15
+  },
+  {
+    "pergunta": "Quanto é 11 × 7?",
+    "opcoes": [
+      "A) 68",
+      "B) 72",
+      "C) 77",
+      "D) 67"
+    ],
+    "resposta_certa": "C) 77",
+    "tempo": 16
+  },
+  {
+    "pergunta": "Clara tinha 130 reais e gastou 77. Com quantos reais ela ficou?",
+    "opcoes": [
+      "A) 60",
+      "B) 53",
+      "C) 46",
+      "D) 49"
+    ],
+    "resposta_certa": "B) 53",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Clara tinha 16 balas e ganhou mais 41. Com quantos balas ele ficou?",
+    "opcoes": [
+      "A) 50",
+      "B) 57",
+      "C) 51",
+      "D) 62"
+    ],
+    "resposta_certa": "B) 57",
+    "tempo": 25
+  },
+  {
+    "pergunta": "Quanto é 15 ÷ 3?",
+    "opcoes": [
+      "A) -5",
+      "B) 3",
+      "C) 5",
+      "D) 13"
+    ],
+    "resposta_certa": "C) 5",
+    "tempo": 15
+  },
+  {
+    "pergunta": "Quanto é 80 - 19?",
+    "opcoes": [
+      "A) 61",
+      "B) 56",
+      "C) 53",
+      "D) 51"
+    ],
+    "resposta_certa": "A) 61",
+    "tempo": 11
+  },
+  {
+    "pergunta": "Quanto é 24 ÷ 3?",
+    "opcoes": [
+      "A) 8",
+      "B) -1",
+      "C) 2",
+      "D) 12"
+    ],
+    "resposta_certa": "A) 8",
+    "tempo": 11
+  },
+  {
+    "pergunta": "Quanto é 77 - 43?",
+    "opcoes": [
+      "A) 35",
+      "B) 34",
+      "C) 29",
+      "D) 40"
+    ],
+    "resposta_certa": "B) 34",
+    "tempo": 20
+  },
+  {
+    "pergunta": "Quanto é 86 - 57?",
+    "opcoes": [
+      "A) 33",
+      "B) 39",
+      "C) 29",
+      "D) 21"
+    ],
+    "resposta_certa": "C) 29",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Quanto é 48 ÷ 6?",
+    "opcoes": [
+      "A) 15",
+      "B) -1",
+      "C) 8",
+      "D) 2"
+    ],
+    "resposta_certa": "C) 8",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Quanto é 10 × 10?",
+    "opcoes": [
+      "A) 90",
+      "B) 110",
+      "C) 100",
+      "D) 108"
+    ],
+    "resposta_certa": "C) 100",
+    "tempo": 10
+  },
+  {
+    "pergunta": "Rafael tinha 35 balas e dividiu igualmente entre 2 amigas. Quantos balas cada uma recebeu?",
+    "opcoes": [
+      "A) 15",
+      "B) 11",
+      "C) 17",
+      "D) 21"
+    ],
+    "resposta_certa": "C) 17",
+    "tempo": 18
+  },
+  {
+    "pergunta": "Quanto é 6 × 2?",
+    "opcoes": [
+      "A) 6",
+      "B) 7",
+      "C) 2",
+      "D) 12"
+    ],
+    "resposta_certa": "D) 12",
+    "tempo": 14
+  },
+  {
+    "pergunta": "Carlos tinha 133 livros e gastou 38. Com quantos livros ela ficou?",
+    "opcoes": [
+      "A) 94",
+      "B) 100",
+      "C) 90",
+      "D) 95"
+    ],
+    "resposta_certa": "D) 95",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Rafael tinha 50 maçãs e dividiu igualmente entre 3 amigas. Quantos maçãs cada uma recebeu?",
+    "opcoes": [
+      "A) 6",
+      "B) 24",
+      "C) 16",
+      "D) 19"
+    ],
+    "resposta_certa": "C) 16",
+    "tempo": 22
+  },
+  {
+    "pergunta": "Quanto é 10 × 3?",
+    "opcoes": [
+      "A) 39",
+      "B) 30",
+      "C) 29",
+      "D) 33"
+    ],
+    "resposta_certa": "B) 30",
+    "tempo": 20
+  },
+  {
+    "pergunta": "Ana tinha 112 livros e gastou 65. Com quantos livros ela ficou?",
+    "opcoes": [
+      "A) 46",
+      "B) 40",
+      "C) 57",
+      "D) 47"
+    ],
+    "resposta_certa": "D) 47",
+    "tempo": 21
+  },
+  {
+    "pergunta": "Quanto é 28 ÷ 7?",
+    "opcoes": [
+      "A) 4",
+      "B) 1",
+      "C) 8",
+      "D) -5"
+    ],
+    "resposta_certa": "A) 4",
+    "tempo": 19
+  },
+  {
+    "pergunta": "Quanto é 8 × 8?",
+    "opcoes": [
+      "A) 67",
+      "B) 61",
+      "C) 54",
+      "D) 64"
+    ],
+    "resposta_certa": "D) 64",
+    "tempo": 15
+  },
+  {
+    "pergunta": "Quanto é 3 × 5?",
+    "opcoes": [
+      "A) 13",
+      "B) 24",
+      "C) 15",
+      "D) 8"
+    ],
+    "resposta_certa": "C) 15",
+    "tempo": 11
+  },
+  {
+    "pergunta": "Lucas tinha 157 reais e gastou 118. Com quantos reais ela ficou?",
+    "opcoes": [
+      "A) 41",
+      "B) 39",
+      "C) 33",
+      "D) 42"
+    ],
+    "resposta_certa": "B) 39",
+    "tempo": 21
+  },
+  {
+    "pergunta": "Quanto é 2 × 9?",
+    "opcoes": [
+      "A) 18",
+      "B) 19",
+      "C) 24",
+      "D) 13"
+    ],
+    "resposta_certa": "A) 18",
+    "tempo": 11
+  },
+  {
+    "pergunta": "Ana tinha 60 livros e dividiu igualmente entre 5 amigas. Quantos livros cada uma recebeu?",
+    "opcoes": [
+      "A) 5",
+      "B) 12",
+      "C) 16",
+      "D) 7"
+    ],
+    "resposta_certa": "B) 12",
+    "tempo": 20
+  },
+  {
+    "pergunta": "Joana tinha 27 livros e ganhou mais 13. Com quantos livros ele ficou?",
+    "opcoes": [
+      "A) 46",
+      "B) 40",
+      "C) 50",
+      "D) 48"
+    ],
+    "resposta_certa": "B) 40",
+    "tempo": 16
+  },
+  {
+    "pergunta": "Quanto é 85 + 12?",
+    "opcoes": [
+      "A) 104",
+      "B) 103",
+      "C) 97",
+      "D) 96"
+    ],
+    "resposta_certa": "C) 97",
+    "tempo": 15
+  },
+  {
+    "pergunta": "Quanto é 55 ÷ 11?",
+    "opcoes": [
+      "A) 13",
+      "B) 5",
+      "C) 15",
+      "D) 1"
+    ],
+    "resposta_certa": "B) 5",
+    "tempo": 16
+  },
+  {
+    "pergunta": "Maria tinha 195 figurinhas e gastou 138. Com quantos figurinhas ela ficou?",
+    "opcoes": [
+      "A) 58",
+      "B) 55",
+      "C) 53",
+      "D) 57"
+    ],
+    "resposta_certa": "D) 57",
+    "tempo": 21
+  },
+  {
+    "pergunta": "Rafael tinha 32 livros e dividiu igualmente entre 6 amigas. Quantos livros cada uma recebeu?",
+    "opcoes": [
+      "A) 12",
+      "B) 5",
+      "C) 6",
+      "D) 4"
+    ],
+    "resposta_certa": "B) 5",
+    "tempo": 24
+  },
+  {
+    "pergunta": "Quanto é 44 - 11?",
+    "opcoes": [
+      "A) 33",
+      "B) 39",
+      "C) 28",
+      "D) 29"
+    ],
+    "resposta_certa": "A) 33",
+    "tempo": 10
+  },
+  {
+    "pergunta": "Joana tinha 30 maçãs e ganhou mais 21. Com quantos maçãs ele ficou?",
+    "opcoes": [
+      "A) 59",
+      "B) 51",
+      "C) 43",
+      "D) 52"
+    ],
+    "resposta_certa": "B) 51",
+    "tempo": 19
+  }
 ]
